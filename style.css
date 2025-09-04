@@ -1,0 +1,354 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #2196F3;
+    --accent-color: #FF9800;
+    --light-color: #f9f9f9;
+    --dark-color: #333;
+    --border-color: #ddd;
+    --shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    height: auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.company-details .contact-info {
+    display: flex;
+    text-align: left;
+    justify-content: space-between;
+    margin-bottom: 1px;
+    font-size: 14px;
+    z-index: -1111;
+}
+
+
+
+.imgdiv img {
+    max-width: 80px;
+    height: auto;
+}
+
+.religious-text {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+h1 {
+    font-family: 'Algeria', sans-serif;
+    font-size: 38px;
+    color: black;
+    margin: 10px 0;
+}
+
+.tagline, .address {
+    font-size: 13px;
+    margin: 5px 0;
+}
+
+.divider {
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+    background: linear-gradient(135deg,transparent, #29323C, #485563, transparent);
+    margin: 20px 0;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--dark-color);
+    margin-bottom: 20px;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+}
+
+.item-row input {
+    width: 100%;
+    border: none;
+    text-align: center;
+    background: transparent;
+}
+
+.item-row input:focus {
+    outline: none;
+    background-color: rgba(33, 150, 243, 0.05);
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f9f9f9;
+}
+
+.total-label {
+    text-align: right;
+}
+
+.total-amount {
+    text-align: center;
+    font-size: 18px;
+    color: var(--primary-color);
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    flex: 1;
+    color: white;
+}
+
+#addRow {
+    background-color: var(--secondary-color);
+    background: linear-gradient(135deg, #22E1FF, #1D8FE1, #625EB1);
+    color: white;
+}
+
+#generatePDF {
+    background-color: var(--primary-color);
+        background: linear-gradient(45deg, #11998E, #38EF7D);
+
+    color: white;
+}
+
+#resetForm {
+    background-color: #f44336;
+    background: linear-gradient(45deg, #FF416C, #FF4B2B);
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.removeRow {
+    padding: 8px;
+    background-color: #ff4d4d;
+    color: white !important;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.removeRow:hover {
+    background-color: #d93636;
+}
+
+footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.notes {
+    font-size: 14px;
+}
+
+.notes p {
+    margin-bottom: 8px;
+}
+
+/* Print Styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    body, .container {
+        margin: 0;
+        padding: 20px;
+        box-shadow: none;
+    }
+    
+    input {
+        border: none;
+        background: transparent;
+    }
+    
+    .button-group {
+        display: none;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    .company-details .contact-info {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .form-group {
+        min-width: 100%;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
+    
+    th, td {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+    
+    input[type="text"],
+    input[type="number"],
+    input[type="date"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+/* PWA Installation Prompt */
+#installContainer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    display: none;
+}
+
+#installButton {
+    background: var(--primary-color);
+    background: linear-gradient(45deg, #b3ffab, #12fff7);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#closeInstall {
+    background: #ccc;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}

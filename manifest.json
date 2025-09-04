@@ -1,0 +1,52 @@
+{
+  "name": "Fast & Fast Pest Control Cash Memo",
+  "short_name": "PestControlMemo",
+  "description": "Cash memo system for Fast & Fast Pest Control",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#4a90e2",
+  "theme_color": "#4a90e2",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./manifest.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "./manifest.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "./manifest.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "./manifest.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "./manifest.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "./manifest.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./manifest.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "./manifest.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast & Fast Pest Control - Cash Memo</title>
+    <meta name="description" content="Generate cash memos for Fast & Fast Pest Control services">
+    <meta name="theme-color" content="#4CAF50">
+    <link rel="shortcut icon" href="./manifest.png" type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.cdnfonts.com/css/algeria" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" href="./manifest.png">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="company-details">
+                <div class="contact-info">
+                    <p>Prakash : 84537 96739</p>
+                    <p>Vinayak : 87469 96843</p>
+                </div>
+                <div class="imgdiv">
+                    <img src="./logo.png" alt="Fast & Fast Pest Control Logo">
+                </div>
+                <p class="religious-text">|| Radha Krishna ||</p>
+                <h1>FAST & FAST PEST CONTROL (HERBAL)</h1>
+                <p class="tagline">"It applies only to cockroaches."</p>
+                <p class="address">Manufactured on Gokul Road, Hubli 580 030</p>
+            </div>
+        </header>
+        
+        <div class="divider"></div>
+        
+        <h2 class="section-title" contenteditable="true">CASH MEMO</h2>
+        
+        <form id="invoiceForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="billNumber">Bill No:</label>
+                    <input type="text" id="billNumber" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" required>
+                </div>
+                
+                <div class="form-group customer-field">
+                    <label for="customerName">To:</label>
+                    <input type="text" id="customerName" required>
+                </div>
+            </div>
+            
+            <div class="table-container">
+                <table id="itemsTable">
+                    <thead>
+                        <tr>
+                            <th width="11%">Sl.No</th>
+                            <th width="30%">Description</th>
+                            <th width="15%">Quantity</th>
+                            <th width="15%">MRP</th>
+                            <th width="20%">Total</th>
+                            <th width="10%" class="no-print">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="item-row">
+                            <td><input type="number" class="slno" value="1" min="1" required></td>
+                            <td><input type="text" class="desc" value="Cockroach Pest" required></td>
+                            <td><input type="number" class="qty" min="1" value="1" required></td>
+                            <td><input type="number" class="mrp" min="1" value="135" step="0.01" required></td>
+                            <td><input type="text" class="total" readonly value="135.00"></td>
+                            <td class="no-print"><button type="button" class="removeRow"> Remove</button></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="total-row">
+                            <td colspan="3"></td>
+                            <td class="total-label">Grand Total:</td>
+                            <td class="total-amount"><span id="finalTotal">0.00</span></td>
+                            <td class="no-print"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            
+            <div class="button-group no-print">
+                <button type="button" id="addRow">Add Item</button>
+                <button type="button" id="generatePDF">Generate PDF/Print</button>
+                <button type="button" id="resetForm">Reset Form</button>
+            </div>
+        </form>
+        
+        <footer>
+            <div class="notes" contenteditable="true">
+                <p><strong>Note:</strong></p>
+                <p>1) It will take One Week to remove cockroaches.</p>
+                <p>2) Take the first service after one month, then schedule the next.</p>
+                <p>3) Cockroaches will not return for three months.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {   
+            // Register Service Worker for PWA
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            }
+            
+            // Show install prompt for PWA
+            let deferredPrompt;
+            const installPrompt = document.getElementById('installPrompt');
+            const installButton = document.getElementById('installButton');
+            const dismissButton = document.getElementById('dismissInstall');
+            
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                deferredPrompt = e;
+                installPrompt.style.display = 'block';
+                
+                installButton.addEventListener('click', () => {
+                    installPrompt.style.display = 'none';
+                    deferredPrompt.prompt();
+                    deferredPrompt.userChoice.then((choiceResult) => {
+                        if (choiceResult.outcome === 'accepted') {
+                            console.log('User accepted install');
+                        } else {
+                            console.log('User dismissed install');
+                        }
+                        deferredPrompt = null;
+                    });
+                });
+                
+                dismissButton.addEventListener('click', () => {
+                    installPrompt.style.display = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
