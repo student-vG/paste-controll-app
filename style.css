@@ -292,6 +292,27 @@ footer {
     .button-group {
         flex-direction: column;
     }
+
+    @media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    body, .container {
+        margin: 0;
+        padding: 20px;
+        box-shadow: none;
+    }
+    
+    input {
+        border: none;
+        background: transparent;
+    }
+    
+    .button-group {
+        display: none;
+    }
+}
 }
 
 @media (max-width: 480px) {
@@ -319,6 +340,26 @@ footer {
         padding: 10px;
         font-size: 14px;
     }
+    @media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    body, .container {
+        margin: 0;
+        padding: 20px;
+        box-shadow: none;
+    }
+    
+    input {
+        border: none;
+        background: transparent;
+    }
+    
+    .button-group {
+        display: none;
+    }
+}
 }
 
 /* PWA Installation Prompt */
