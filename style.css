@@ -257,6 +257,11 @@ footer {
     .button-group {
         display: none;
     }
+    input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  pointer-events: none;
+}
+
 }
 
 /* Responsive Design */
@@ -312,6 +317,11 @@ footer {
     .button-group {
         display: none;
     }
+        input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  pointer-events: none;
+}
+
 }
 }
 
@@ -393,3 +403,9 @@ footer {
     border-radius: 4px;
     cursor: pointer;
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  pointer-events: none;
+}
+
